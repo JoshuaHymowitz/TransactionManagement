@@ -7,6 +7,10 @@ public class Profile {
 	private String fname;
 	private String lname;
 	
+	public Profile(String fname, String lname) {
+		this.fname = fname;
+		this.lname = lname;
+	}
 	/**
 	 * accessor method to return a string containing a concatentaion of the first and last name
 	 * 

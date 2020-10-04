@@ -41,7 +41,7 @@ public abstract class Account {
 		output += this.holder.getName();
 		output += "* $";
 		output += this.balance;
-		output += "*";
+		output += "* ";
 		output += this.dateOpen.toString();
 		
 		return output;
