@@ -81,10 +81,46 @@ public class AccountDatabase {
 	}
 	private void sortByDateOpen() {
 		
+		for(int i = 0; i < size; i++) {
+			int indexLowest = 0;
+			for(int j = i + 1; j < size; j++) {
+				if(this.accounts[j].getDate().compareTo(this.accounts[indexLowest].getDate())  < 0) { //if the date being looked at right now is earlier than the date currently believed to be the lowest, replace the indexLowest variable
+					indexLowest = j;
+				}
+			}
+			Account temp;
+			temp = this.accounts[i];
+			this.accounts[i] = this.accounts[indexLowest];
+			this.accounts[indexLowest] = temp;
+		}
 		
 	} //sort in ascending order
-	private void sortByLastName() { } //sort in ascending order
-	public void printByDateOpen() { }
-	public void printByLastName() { }
-	public void printAccounts() { }
+	private void sortByLastName() {
+		for(int i = 0; i < size; i++) {
+			int indexLowest = 0;
+			for(int j = i + 1; j < size; j++) {
+				if(this.accounts[j].getProfile().getLastName().compareTo(this.accounts[indexLowest].getProfile().getLastName()) < 0) { //if the date being looked at right now is earlier than the date currently believed to be the lowest, replace the indexLowest variable
+					indexLowest = j;
+				}
+			}
+			Account temp;
+			temp = this.accounts[i];
+			this.accounts[i] = this.accounts[indexLowest];
+			this.accounts[indexLowest] = temp;
+		}
+	} //sort in ascending order
+	public void printByDateOpen() {
+		this.sortByDateOpen();
+		printAccounts();
+	}
+	public void printByLastName() { 
+		this.sortByLastName();
+		printAccounts();
+	}
+	public void printAccounts() {
+		for(Account account : accounts) {
+			System.out.println(account.toString());
+		}
+	}
 }
+

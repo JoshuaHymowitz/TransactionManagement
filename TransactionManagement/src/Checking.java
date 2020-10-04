@@ -28,6 +28,9 @@ public class Checking extends Account {
 	}
 	
 	public double monthlyFee() {
+		if(directDeposit) {
+			return 0;
+		}
 		if(this.getBalance() < 1500) {
 			return 25;
 		}else {
@@ -39,4 +42,14 @@ public class Checking extends Account {
 		return 0.05 * this.getBalance();
 		
 	}
+	public String toString() {
+		String str1 = super.toString();
+		String str2 = "*Checking*";
+		String output = str1 + str2;
+		if(directDeposit) {
+			output += "*direct deposit account";
+		}
+		return output;
+	}
+	
 }

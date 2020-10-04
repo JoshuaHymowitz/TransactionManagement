@@ -30,6 +30,8 @@ public class MoneyMarket extends Account {
 	public double monthlyFee() {
 		if(this.getBalance() < 2500) {
 			return 12;
+		}else if(withdrawals > 6){
+			return 12;
 		}else {
 			return 0;
 		}
@@ -38,5 +40,15 @@ public class MoneyMarket extends Account {
 	public double monthlyInterest() {
 		return 0.65 * this.getBalance();
 		
+	}
+	
+	public String toString() {
+		String str1 = super.toString();
+		String str2 = "*Savings*";
+		String output = str1 + str2;
+		
+		output += withdrawals;
+		
+		return output;
 	}
 }

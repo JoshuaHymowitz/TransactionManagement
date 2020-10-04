@@ -27,4 +27,8 @@ public class Profile {
 			return false;
 		}
 	}
+	
+	public String getLastName() {
+		return this.lname;
+	}
 }

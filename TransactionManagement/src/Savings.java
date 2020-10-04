@@ -36,7 +36,21 @@ public class Savings extends Account {
 	}
 	
 	public double monthlyInterest() {
-		return 0.25 * this.getBalance();
+		if(isLoyal) {
+			return 0.35 * this.getBalance();
+		}else {
+			return 0.25 * this.getBalance();
+		}
 		
+	}
+	
+	public String toString() {
+		String str1 = super.toString();
+		String str2 = "*Savings*";
+		String output = str1 + str2;
+		if(isLoyal) {
+			output += "*special savings account";
+		}
+		return output;
 	}
 }
