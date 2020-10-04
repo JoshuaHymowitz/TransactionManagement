@@ -11,12 +11,12 @@ public class MoneyMarket extends Account {
 		this.withdrawals = withdrawals;
 	}
 	
-	public boolean equals(MoneyMarket otherAccount) {
+	public boolean equals(Account otherAccount) {
 		if( !(otherAccount instanceof MoneyMarket)) {
 			return false;
 		}else if(!(super.equals(otherAccount))){
 			return false;
-		}else if(this.withdrawals != otherAccount.getWithdrawals()) {
+		}else if(this.withdrawals != ((MoneyMarket) otherAccount).getWithdrawals()) {
 			return false;
 		}else {
 			return true;

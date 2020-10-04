@@ -11,12 +11,12 @@ public class Checking extends Account {
 		this.directDeposit = directDeposit;
 	}
 	
-	public boolean equals(Checking otherAccount) {
+	public boolean equals(Account otherAccount) {
 		if( !(otherAccount instanceof Checking)) {
 			return false;
 		}else if(!(super.equals(otherAccount))){
 			return false;
-		}else if(this.directDeposit != otherAccount.getDirectDeposit()) {
+		}else if(this.directDeposit != ((Checking) otherAccount).getDirectDeposit()) {
 			return false;
 		}else {
 			return true;

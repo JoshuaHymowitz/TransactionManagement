@@ -6,7 +6,22 @@
 public class AccountDatabase {
 	private Account[] accounts;
 	private int size;
-	private int find(Account account) { }
+	
+	public AccountDatabase() {
+		this.size = 5;
+		this.accounts = new Account[5];
+		
+	}
+	
+	private int find(Account account) {
+		for(int i = 0; i < size; i++) {
+			if(accounts[i].equals(account)) {
+				return i;
+			}
+		}
+		return -1;
+		
+	}
 	private void grow() { }
 	public boolean add(Account account) { } //return false if account exists
 	public boolean remove(Account account) { } //return false if account doesn’t exist

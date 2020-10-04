@@ -11,12 +11,12 @@ public class Savings extends Account {
 		this.isLoyal = isLoyal;
 	}
 	
-	public boolean equals(Savings otherAccount) {
-		if( !(otherAccount instanceof Savings)) {
+	public boolean equals(Account otherAccount) {
+		if( !(otherAccount instanceof Savings)) { //verify the account being compared is a Savings account
 			return false;
-		}else if(!(super.equals(otherAccount))){
+		}else if(!(super.equals(otherAccount))){ //invoke the super equals method that already compares date, holder, and balance
 			return false;
-		}else if(this.isLoyal != otherAccount.getLoyal()) {
+		}else if(this.isLoyal != ((Savings) otherAccount).getLoyal()) { //compare isLoyal
 			return false;
 		}else {
 			return true;

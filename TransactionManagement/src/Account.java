@@ -51,27 +51,40 @@ public abstract class Account {
 	public abstract double monthlyInterest();
 	public abstract double monthlyFee();
 	
-	
+	/**
+	 * Test whether two accounts are equal by comparing their opened dates, holder profiles, and balances
+	 * @param another account
+	 * @return true if accounts are equal, false otherwise
+	 */
 	public boolean equals(Account otherAccount) {
 		if(this.dateOpen.compareTo(otherAccount.getDate()) != 0) {//compare dates
 			return false;
-		}else if(!(this.holder.equals(otherAccount.getProfile()))) {
+		}else if(!(this.holder.equals(otherAccount.getProfile()))) {//compare holder Profiles
 			return false;
-		}else if(this.balance != otherAccount.getBalance()) {
+		}else if(this.balance != otherAccount.getBalance()) {//compare balances
 			return false;
 		}else {
-			return true;
+			return true; //if all of the comparisons came back equal, we have a match
 		}
 	}
-	
+	/**
+	 * accessor method for the date
+	 * @return the opened date
+	 */
 	public Date getDate() {
 		return this.dateOpen;
 	}
-	
+	/**
+	 * accessor method for the holder profile
+	 * @return the profile for the holder of the account
+	 */
 	public Profile getProfile() {
 		return this.holder;
 	}
-	
+	/**
+	 * accessor method for the balance
+	 * @return the balance of the account
+	 */
 	public double getBalance() {
 		return this.balance;
 	}
