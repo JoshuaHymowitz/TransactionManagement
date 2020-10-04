@@ -19,4 +19,12 @@ public class Profile {
 		output += lname;
 		return output;
 	}
+	
+	public boolean equals(Profile otherProfile) {
+		if(this.getName().equals(otherProfile.getName())) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 }

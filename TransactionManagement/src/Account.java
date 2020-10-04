@@ -8,7 +8,11 @@ public abstract class Account {
 	private double balance;
 	private Date dateOpen;
 	
-	
+	public Account(Profile holder, double balance, Date dateOpen) {
+		this.holder = holder;
+		this.balance = balance;
+		this.dateOpen = dateOpen;
+	}
 	
 	/**
 	 * Method to decrease the amount of money in the account by the specified value,
@@ -37,16 +41,38 @@ public abstract class Account {
 		output += this.holder.getName();
 		output += "* $";
 		output += this.balance;
-		output + "*";
+		output += "*";
 		output += this.dateOpen.toString();
 		
+		return output;
 		
 	}
-	public abstract double monthlyInterest { }
-	public abstract double monthlyFee() { }
+	
+	public abstract double monthlyInterest();
+	public abstract double monthlyFee();
 	
 	
-	public boolean equals() {
-		
+	public boolean equals(Account otherAccount) {
+		if(this.dateOpen.compareTo(otherAccount.getDate()) != 0) {//compare dates
+			return false;
+		}else if(!(this.holder.equals(otherAccount.getProfile()))) {
+			return false;
+		}else if(this.balance != otherAccount.getBalance()) {
+			return false;
+		}else {
+			return true;
+		}
+	}
+	
+	public Date getDate() {
+		return this.dateOpen;
+	}
+	
+	public Profile getProfile() {
+		return this.holder;
+	}
+	
+	public double getBalance() {
+		return this.balance;
 	}
 }
