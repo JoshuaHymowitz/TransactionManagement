@@ -1,3 +1,7 @@
+/**
+
+@author Max Bartlik, Josh Hymowitz
+*/
 
 public class Date implements Comparable<Date> {
 	

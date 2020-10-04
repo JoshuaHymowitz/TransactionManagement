@@ -1,3 +1,8 @@
+/**
+
+@author Max Bartlik, Josh Hymowitz
+*/
+
 public class AccountDatabase {
 	private Account[] accounts;
 	private int size;
